@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace Kalkulator_z_buchaju
 {
-
-    public delegate float receiveOperator();
-    class Operator
+    class CalculatorConstants
     {
+        readonly public static string EMPTY_STRING = "";
 
     }
 }
