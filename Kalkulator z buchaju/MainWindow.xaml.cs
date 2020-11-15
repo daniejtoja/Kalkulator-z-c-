@@ -34,7 +34,7 @@ namespace Kalkulator_z_buchaju
         delegate void DelegateHistory(System.Windows.Controls.ListBox listBox, string toAdd);
         DelegateCalc handleOperations = CalculatorUtils.kalkulacja;
         DelegateHistory handleAddToHistory = CalculatorUtils.dodajDoHistorii;
-        Button clickedButton;
+        Button clickedButton = new Button();
 
 
         public MainWindow()
@@ -47,6 +47,9 @@ namespace Kalkulator_z_buchaju
 
         private void digitButtonClick(object sender, RoutedEventArgs e)
         {
+            if ((operation[1].Contains(".") || operation[2].Contains(".") || resultBox.Text.Contains(".")) && ((String)((Button)sender).Content).Equals("."))
+                return;
+
             if (justUsedEquals)
             {
                 resultBox.Text = (String)((Button)sender).Content;
